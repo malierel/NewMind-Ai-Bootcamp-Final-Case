@@ -1,0 +1,210 @@
+Müþteri Verisi Ýlk 5 Satýr:
+    musteri_id      isim cinsiyet  yas      sehir  harcama_miktari
+0        4353  Gülþahin    Kadýn   57  Gaziantep          2726.01
+1        8374  Yahþikan    Erkek   66  Gaziantep          4754.70
+2        3902  Candeniz    Erkek   61      Konya           867.20
+3        2080     Gözel    Erkek   64      Adana          2020.97
+4        7901   Erdogan    Kadýn   63   Ýstanbul          4334.16
+
+Satýþ Verisi Ýlk 5 Satýr:
+    Unnamed: 0       tarih ürün_kodu  ... adet       toplam_satis musteri_id
+0           0  2023-07-02      P032  ...   13            15694.9       9225
+1           1  2024-02-11      P011  ...   16            3794.24       3955
+2           2  2023-03-06      P024  ...    9            9218.61       2367
+3           3  2024-04-11      P063  ...    9  13300920000000000       2869
+4           4  2024-01-08      P063  ...   19           18039.17       9724
+
+[5 rows x 9 columns]
+
+Müþteri Verisi Bilgileri:
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 5000 entries, 0 to 4999
+Data columns (total 6 columns):
+ #   Column           Non-Null Count  Dtype  
+---  ------           --------------  -----  
+ 0   musteri_id       5000 non-null   int64  
+ 1   isim             5000 non-null   object 
+ 2   cinsiyet         5000 non-null   object 
+ 3   yas              5000 non-null   int64  
+ 4   sehir            5000 non-null   object 
+ 5   harcama_miktari  5000 non-null   float64
+dtypes: float64(1), int64(2), object(3)
+memory usage: 234.5+ KB
+
+Satýþ Verisi Bilgileri:
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 5000 entries, 0 to 4999
+Data columns (total 9 columns):
+ #   Column        Non-Null Count  Dtype 
+---  ------        --------------  ----- 
+ 0   Unnamed: 0    5000 non-null   int64 
+ 1   tarih         5000 non-null   object
+ 2   ürün_kodu     5000 non-null   object
+ 3   ürün_adi      5000 non-null   object
+ 4   kategori      5000 non-null   object
+ 5   fiyat         5000 non-null   object
+ 6   adet          5000 non-null   int64 
+ 7   toplam_satis  5000 non-null   object
+ 8   musteri_id    5000 non-null   int64 
+dtypes: int64(3), object(6)
+memory usage: 351.7+ KB
+
+Müþteri Verisi Eksik Deðerler:
+ musteri_id         0
+isim               0
+cinsiyet           0
+yas                0
+sehir              0
+harcama_miktari    0
+dtype: int64
+
+Satýþ Verisi Eksik Deðerler:
+ Unnamed: 0      0
+tarih           0
+ürün_kodu       0
+ürün_adi        0
+kategori        0
+fiyat           0
+adet            0
+toplam_satis    0
+musteri_id      0
+dtype: int64
+
+Eksik Deðerler Doldurulduktan Sonra Müþteri Verisi:
+ musteri_id         0
+isim               0
+cinsiyet           0
+yas                0
+sehir              0
+harcama_miktari    0
+dtype: int64
+
+Eksik Deðerler Doldurulduktan Sonra Satýþ Verisi:
+ Unnamed: 0      0
+tarih           0
+ürün_kodu       0
+ürün_adi        0
+kategori        0
+fiyat           0
+adet            0
+toplam_satis    0
+musteri_id      0
+dtype: int64
+
+Aykýrý Deðerlerin Temizlenmesinden Sonra Satýþ Verisi Boyutu: (5000, 9)
+
+Aykýrý Deðerlerin Temizlenmesinden Sonra Müþteri Verisi Boyutu: (5000, 6)
+
+Birleþik Veri Ýlk 5 Satýr:
+    Unnamed: 0       tarih ürün_kodu  ... yas     sehir  harcama_miktari
+0           0  2023-07-02      P032  ...  35  Ýstanbul          3588.15
+1           1  2024-02-11      P011  ...  64     Konya          3742.46
+2           2  2023-03-06      P024  ...  45     Bursa           197.55
+3           3  2024-04-11      P063  ...  43  Ýstanbul          3662.18
+4           4  2024-01-08      P063  ...  41     Bursa          2536.20
+
+[5 rows x 14 columns]
+
+Satýþ Verisi Tarih Kolonundaki Format Kontrolü:
+Tüm tarihler ayný formatta ve uygun þekilde dönüþtürüldü.
+
+Formatý hatalý olan tarih sayýsý: 0
+
+Tarih formatý düzeltilmiþ ve hatalý tarihler çýkarýlmýþ satýþ verisi boyutu: (5000, 14)
+
+Toplam satýþ sütunu fiyat * adet olarak güncellendi.
+
+Satýþ Verisi Sayýsal Sütunlarýn Ýstatistiksel Özeti:
+         Unnamed: 0        fiyat         adet   musteri_id
+count  5000.000000  5000.000000  5000.000000  5000.000000
+mean   2499.500000   746.897466    10.071800  5462.697000
+std    1443.520003   426.799536     5.461264  2593.182503
+min       0.000000    13.530000     1.000000  1004.000000
+25%    1249.750000   376.280000     5.000000  3202.000000
+50%    2499.500000   742.480000    10.000000  5404.000000
+75%    3749.250000  1115.065000    15.000000  7710.000000
+max    4999.000000  1499.930000    19.000000  9998.000000
+
+Müþteri Verisi Sayýsal Sütunlarýn Ýstatistiksel Özeti:
+         musteri_id          yas  harcama_miktari
+count  5000.000000  5000.000000      5000.000000
+mean   5478.339000    43.704000      2554.959014
+std    2605.860787    15.083086      1415.329144
+min    1001.000000    18.000000       100.230000
+25%    3188.250000    31.000000      1313.147500
+50%    5441.500000    44.000000      2515.985000
+75%    7738.750000    57.000000      3793.522500
+max    9999.000000    69.000000      4999.440000
+
+Ürün Kategorilerine Göre Toplam Satýþ Miktarý:
+ kategori
+Elektronik         18292488.75
+Kýrtasiye           7863857.98
+Giyim               3923653.59
+Ev Aletleri         3798794.61
+Mutfak Ürünleri     3774758.89
+Name: toplam_satis, dtype: float64
+
+Ürün Kategorilerinin Tüm Satýþlar Ýçindeki Oraný (%):
+ kategori
+Elektronik         48.581042
+Kýrtasiye          20.884770
+Giyim              10.420407
+Ev Aletleri        10.088808
+Mutfak Ürünleri    10.024974
+Name: toplam_satis, dtype: float64
+
+Yaþ Gruplarýna Göre Toplam Satýþ Miktarý:
+ yas_grubu
+18-25     5384668.35
+26-35     6862930.88
+36-50    11230144.25
+50+      14175810.34
+Name: toplam_satis, dtype: float64
+
+Cinsiyete Göre Toplam Harcama Miktarý:
+ cinsiyet
+Erkek    6351635.09
+Kadýn    6423159.98
+Name: harcama_miktari, dtype: float64
+
+Þehir Bazýnda Toplam Harcama Miktarý:
+ sehir
+Ýzmir        1719480.53
+Gaziantep    1680765.15
+Ankara       1632071.24
+Konya        1604023.46
+Adana        1567156.27
+Ýstanbul     1544511.23
+Bursa        1543966.94
+Antalya      1482820.25
+Name: harcama_miktari, dtype: float64
+
+Her Bir Ürün Ýçin Ortalama Satýþ Artýþý Oraný (%):
+ ürün_kodu
+P010     4.617467
+P011    11.632030
+P018    -2.015909
+P024    16.172751
+P032     4.523185
+P037     5.443718
+P063     2.130580
+P082     9.207474
+P087     6.577236
+P097     2.097570
+Name: aylik_degisimi, dtype: float64
+
+Satýþlarýn %80'ini Oluþturan Ürünler:
+ ürün_kodu
+P011    10.639466
+P018    21.175885
+P010    31.596292
+P082    41.841595
+P037    51.930403
+P032    61.979961
+P097    72.004934
+Name: toplam_satis, dtype: float64
+
+Regresyon Modeli Performansý:
+Mean Squared Error (MSE): 92624995102.08864
+R-Kare (R²): -1.026784268325677
